@@ -1,0 +1,10 @@
+div.span2
+    h2.
+        Post #{post.id}
+div.span10
+    form.form-horizontal(action="/posts/#{post.id}",method="POST")
+        input(type='hidden',name='_method',value='PUT')
+        != partial('post/form', {post: post})
+        .form-actions
+            button.btn.btn-primary(type='submit') Send
+            a.btn(href='/posts') Back

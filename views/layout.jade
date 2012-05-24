@@ -2,5 +2,22 @@
 html
   head
     title= title
-    link(rel='stylesheet', href='/stylesheets/style.css')
-  body!= body
+    link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+  body
+  div.navbar.navbar-fixed-top
+    div.navbar-inner
+      div.container
+        a.btn.btn-navbar(data-toggle='collapse',data-target='.nav-collapse')
+          span.icon-bar
+          span.icon-bar
+          span.icon-bar
+        a.brand(href='/') Test
+        div.nav-collapse
+          ul.nav
+            li
+              a(href='/posts') Posts
+  div.container-fluid
+    if typeof(errors) != 'undefined' && errors
+        .row-fluid
+            .span12.alert.alert-error= errors
+    div.row-fluid!= body

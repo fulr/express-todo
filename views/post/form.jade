@@ -1,0 +1,23 @@
+fieldset
+    if typeof(post)!= 'undefined' && post
+        .control-group
+            label.control-label Id
+            .controls
+                .uneditable-input= post.id
+        .control-group
+            label.control-label Title
+            .controls
+                input(type='text',name='post[title]',value=post.title)
+        .control-group
+            label.control-label Body
+            .controls
+                input(type='text',name='post[body]',value=post.body)
+    else
+        .control-group
+            label.control-label Title
+            .controls
+                input(type='text',name='post[title]')
+        .control-group
+            label.control-label Body
+            .controls
+                input(type='text',name='post[body]')
