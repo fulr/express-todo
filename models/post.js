@@ -8,6 +8,6 @@ var PostSchema = new Schema({
     ,date: { type: Date, default: Date.now }
 });
 
-exports.PostModel=mongoose.model('PostModel', PostSchema);
+var PostModel = module.exports = mongoose.model('PostModel', PostSchema);
 
 

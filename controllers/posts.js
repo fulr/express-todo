@@ -1,4 +1,4 @@
-var PostModel=require('../models/post').PostModel;
+var PostModel=require('../models/post');
 
 exports.index=function(req,res){
     PostModel.find({},function(err, posts) {

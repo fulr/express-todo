@@ -5,7 +5,7 @@
 
 var express = require('express')
   , Resource = require('express-resource')
-  , routes = require('./routes')
+  , routes = require('./routes').routes
   , mongoose = require('mongoose');
 
 
@@ -36,9 +36,7 @@ app.configure('production', function(){
 
 // Routes
 
-app.get('/', routes.index);
-
-app.resource('posts',require('./controllers/posts'), {id: 'id'})
+routes(app);
 
 app.listen(3000, function(){
   console.log("Express server listening on port %d in %s mode", app.address().port, app.settings.env);
