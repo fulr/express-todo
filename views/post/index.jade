@@ -1,23 +1,23 @@
-div.span1
+.span1
     h1 Posts
     a.btn(href='/posts/new') new
-div.span11
-  table.table
-      thead
-          tr
-              th Title
-              th Date
-              th Actions
-      tbody
-          for post in posts
+.span11
+    table.table
+        thead
             tr
-              td
-                a(href="/posts/#{post.id}")= post.title
-              td= post.date
-              td
-                a.btn(href="/posts/#{post.id}/edit")
-                  i.icon-edit
-                form.form-inline(method='POST',action='/posts/#{post.id}')
-                    input(type='hidden',name='_method',value='DELETE')
-                    button.btn(type='submit')
-                        i.icon-remove
+                th Title
+                th Date
+                th Actions
+        tbody
+            for post in posts
+                tr
+                    td
+                        a(href="/posts/#{post.id}")= post.title
+                    td= post.date
+                    td
+                        a.btn(href="/posts/#{post.id}/edit")
+                            i.icon-edit
+                        form.form-inline(method='POST',action='/posts/#{post.id}')
+                            input(type='hidden',name='_method',value='DELETE')
+                            button.btn(type='submit')
+                                i.icon-remove

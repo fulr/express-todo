@@ -8,5 +8,6 @@
     , "less": ">= 0.0.1"
     , "express-resource": ">0.0.1"
     , "mongoose": ">0.0.1"
+    , "express-mongoose": ">0.0.1"
   }
 }

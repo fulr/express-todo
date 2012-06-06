@@ -1,9 +1,8 @@
-div.span2
-    h2.
-        New Post
-div.span10
+.span2
+    h2 New Post
+.span10
     form.form-horizontal(action="/posts",method="POST")
-        != partial('post/form')
+        != partial('post/_form')
         .form-actions
             button.btn.btn-primary(type='submit') Send
             a.btn(href='/posts') Back

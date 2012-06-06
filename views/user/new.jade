@@ -1,0 +1,5 @@
+.span4.offset4
+    form(action='/users',method='POST')
+        != partial('user/_form', { user: { username: '', fullname: '' } })
+        .form-actions
+            input.btn.btn-primary(type='submit',value='create')
