@@ -1,21 +1,24 @@
-.span2
-    a.btn(href='/users/new') new
-.span10
-    table.table.table-condensed
-        thead
-            tr
-                th Username
-                th Full Name
-                th Created
-                th Last Login
-                th Actions
-        tbody
-            for user in users
+extends ../layout
+
+block content
+    .span2
+        a.btn(href='/users/new') new
+    .span10
+        table.table.table-condensed
+            thead
                 tr
-                    td= user.username
-                    td= user.fullname
-                    td= user.created
-                    td= user.lastlogin
-                    td
-                        a.btn(href='/users/#{user.username}/edit')
-                            i.icon-edit
+                    th Username
+                    th Full Name
+                    th Created
+                    th Last Login
+                    th Actions
+            tbody
+                for user in users
+                    tr
+                        td= user.username
+                        td= user.fullname
+                        td= dateformat(user.created,'isoDateTime')
+                        td= dateformat(user.lastlogin,'isoDateTime')
+                        td
+                            a.btn(href='/users/#{user.username}/edit')
+                                i.icon-edit

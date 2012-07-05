@@ -1,6 +1,6 @@
 .span2
     h2.
-        Post #{post.id}
+        Post #{post.title}
 .span10
     form(action="/posts/#{post.id}",method="POST")
         input(type='hidden',name='_method',value='PUT')

@@ -1,5 +1,10 @@
-.span4.offset4
-    form(action='/users',method='POST')
-        != partial('user/_form', { user: { username: '', fullname: '' } })
-        .form-actions
-            input.btn.btn-primary(type='submit',value='create')
+extends ../layout
+
+include _form
+
+block content
+    .span4.offset4
+        form(action='/users',method='POST')
+            mixin form({ username: '', fullname: '' })
+            .form-actions
+                input.btn.btn-primary(type='submit',value='create')

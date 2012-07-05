@@ -1,13 +1,15 @@
 {
     "name": "express-demo"
+  , "main": "app.coffee"
   , "version": "0.0.1"
   , "private": true
   , "dependencies": {
-      "express": "2.5.8"
-    , "jade": ">= 0.0.1"
-    , "less": ">= 0.0.1"
-    , "express-resource": ">0.0.1"
-    , "mongoose": ">0.0.1"
-    , "express-mongoose": ">0.0.1"
+      "express": "*"
+    , "jade": "*"
+    , "less": "*"
+    , "mongoose": "*"
+    , "connect-assets": "*"
+    , "express-mongoose": "*"
+    , "dateformat": "*"
   }
 }

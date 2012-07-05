@@ -1,8 +1,9 @@
-.control-group
-    label Username
-    .controls
-        input(type='text',name='user[username]',value=user.username)
-.control-group
-    label Fullname
-    .controls
-        input(type='text',name='user[fullname]',value=user.fullname)
+mixin form(user)
+    .control-group
+        label Username
+        .controls
+            input(type='text',name='user[username]',value=user.username)
+    .control-group
+        label Fullname
+        .controls
+            input(type='text',name='user[fullname]',value=user.fullname)

@@ -1,20 +1,19 @@
-.span1
-    h1 Posts
-    a.btn(href='/posts/new') new
-.span11
-    table.table
-        thead
-            tr
-                th Title
-                th Date
-                th Actions
-        tbody
-            for post in posts
-                tr
-                    td
-                        a(href="/posts/#{post.id}")= post.title
-                    td= post.date
-                    td
+extends ../layout
+
+block content
+    .span2
+        h1 Posts
+        a.btn(href='/posts/new') new
+    .span10
+        for post in posts
+            a(href="/posts/#{post.id}")
+                .row-fluid
+                    .span6
+                        h3= post.title
+                    .span6= dateformat(post.date,'isoDateTime')
+                .row-fluid
+                    .span11= post.body
+                    .span1
                         a.btn(href="/posts/#{post.id}/edit")
                             i.icon-edit
                         form.form-inline(method='POST',action='/posts/#{post.id}')

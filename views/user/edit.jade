@@ -1,9 +1,14 @@
-.span2
-    h2= user.username
-.span10
-    form(action="/users/#{user.username}",method="POST")
-        input(type='hidden',name='_method',value='PUT')
-        != partial('user/_form', { user: user })
-        .form-actions
-            button.btn.btn-primary(type='submit') update
-            a.btn(href='/users') back
+extends ../layout
+
+include _form
+
+block content
+    .span2
+        h2= user.username
+    .span10
+        form(action="/users/#{user.username}",method="POST")
+            input(type='hidden',name='_method',value='PUT')
+            mixin form(user)
+            .form-actions
+                button.btn.btn-primary(type='submit') update
+                a.btn(href='/users') back

@@ -2,7 +2,9 @@
 html
     head
         title= title
-        link(rel='stylesheet', type='text/css', href='/stylesheets/style.css')
+        != css('style')
+        != js('scripts')
+        != js('jquery')
     body
         .navbar.navbar-fixed-top
             .navbar-inner
@@ -26,4 +28,5 @@ html
                 .row
                     .span12
                         .alert.alert-error= errors
-            .row!= body
+            .row
+                block content

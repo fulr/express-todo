@@ -1,12 +1,15 @@
-.span2
-    ul.nav.nav-list
-        li.nav-header Welcome
-        li
-            a(href='/posts') Posts
-.span10
-    .row-fluid
-        .hero-unit
-            h1= title
-            p Welcome to #{title}
-            a.btn.btn-primary(href='/posts') Posts
+extends layout
+
+block content
+    .span2
+        ul.nav.nav-list
+            li.nav-header Welcome
+            li
+                a(href='/posts') Posts
+    .span10
+        .row-fluid
+            .hero-unit
+                h1= title
+                p Welcome to #{title}
+                a.btn.btn-primary(href='/posts') Posts
 
